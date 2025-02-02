@@ -315,6 +315,7 @@ jQuery(function ($) {
         const muteBtn = document.querySelector('.mute-btn');
         const volumeSlider = document.querySelector('.volume-slider');
         const nextBtn = document.querySelector('.next-btn');
+        const prevBtn = document.querySelector('.prev-btn');
 
         // Play/Pause
         playBtn.addEventListener('click', () => {
@@ -384,6 +385,24 @@ jQuery(function ($) {
                 audio.pause();
                 index = 0;
                 loadTrack(index);
+            }
+        });
+
+        // Previous button
+        prevBtn.addEventListener('click', () => {
+            if ((index - 1) > -1) {
+                index--;
+                loadTrack(index);
+                if (playing) {
+                    audio.play();
+                }
+            } else {
+                // Wrap to last track
+                index = trackCount - 1;
+                loadTrack(index);
+                if (playing) {
+                    audio.play();
+                }
             }
         });
 

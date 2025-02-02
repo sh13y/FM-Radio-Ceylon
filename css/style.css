@@ -551,6 +551,7 @@ audio {
     padding: 0.5rem;
     background: rgba(0, 0, 0, 0.2);
     border-radius: 0.5rem;
+    justify-content: space-between;
 }
 
 .control-btn {
@@ -621,5 +622,30 @@ audio {
 
     .volume-control {
         max-width: 100px;
+    }
+}
+
+/* Style for prev/next buttons */
+.prev-btn svg, .next-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: #FFB300;
+}
+
+.prev-btn:hover svg, .next-btn:hover svg {
+    fill: #FFD700;
+    transform: scale(1.1);
+}
+
+/* Mobile adjustments */
+@media only screen and (max-width: 600px) {
+    .prev-btn svg, .next-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .player-controls {
+        gap: 0.3rem;
+        padding: 0.25rem;
     }
 }
