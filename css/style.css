@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Oxygen:300,400,700');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap');
 
-html,body {
-    -webkit-font-smoothing:antialiased;
-    -webkit-text-size-adjust:100%;
+html, body {
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
     background: linear-gradient(135deg, 
         #4d0b20 0%,    /* Darker Maroon */
         #4d0b20 40%,   
@@ -17,24 +17,22 @@ html,body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    color:#fff;
-    font-size:1.05rem;
-    font-family:"Oxygen", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight:300;
-    letter-spacing:.025rem;
-    line-height:1.618;
+    color: #fff;
+    font-size: 1.05rem;
+    font-family: "Oxygen", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    letter-spacing: .025rem;
+    line-height: 1.618;
     box-sizing: border-box;
-    /* padding:1rem 0; */
-    
 }
- 
-*,::before,::after {
-    box-sizing:border-box;
+
+*, ::before, ::after {
+    box-sizing: border-box;
 }
 
 * {
-    -webkit-tap-highlight-color:rgba(0,0,0,0);
-    -webkit-tap-highlight-color:transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
 }
 
 header {
@@ -56,7 +54,6 @@ header {
     text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    /* Sri Lankan flag colors gradient */
     background: linear-gradient(
         45deg,
         #8D153A 0%,    /* Maroon */
@@ -71,12 +68,10 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    /* Add some animation */
     background-size: 200% auto;
     animation: gradient 5s linear infinite;
 }
 
-/* Add animation keyframes */
 @keyframes gradient {
     0% {
         background-position: 0% center;
@@ -86,7 +81,6 @@ header {
     }
 }
 
-/* Make the subtitle match the theme */
 .header-content .subtitle {
     color: #FFB300;
     margin-top: 0.75rem;
@@ -97,7 +91,6 @@ header {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Container width adjustments */
 .container {
     position: relative;
     margin: 0 auto;
@@ -106,7 +99,6 @@ header {
     padding: 0 1rem;
 }
 
-/* Match station-info width with playlist */
 #nowPlay {
     display: block;
     padding: 0;
@@ -156,7 +148,6 @@ header {
     transform: scale(1.1);
 }
 
-/* Add default logo */
 #station-logo:empty::before {
     content: '';
     width: 100%;
@@ -195,55 +186,55 @@ header {
 }
 
 .column {
-    width:inherit;
+    width: inherit;
 }
 
 p {
-    color:#fff;
-    display:block;
-    font-size:.9rem;
-    font-weight:400;
-    margin:0 0 2px;
+    color: #fff;
+    display: block;
+    font-size: .9rem;
+    font-weight: 400;
+    margin: 0 0 2px;
 }
 
 a, a:visited {
-    color:#8cc3e6;
-    outline:0;
-    text-decoration:underline;
+    color: #8cc3e6;
+    outline: 0;
+    text-decoration: underline;
 }
 
 a:hover, a:focus {
-    color:#bbdef5;
+    color: #bbdef5;
 }
 
 p a, p a:visited {
-    line-height:inherit;
+    line-height: inherit;
 }
 
-.add-bottom { margin-bottom:2rem !important; }
-.left { float:left; }
-.right { float:right; }
-.center { text-align:center; }
-.hidden { display:none; }
+.add-bottom { margin-bottom: 2rem !important; }
+.left { float: left; }
+.right { float: right; }
+.center { text-align: center; }
+.hidden { display: none; }
 
 .no-support {
-    margin:2rem auto;
-    text-align:center;
-    width:90%;
+    margin: 2rem auto;
+    text-align: center;
+    width: 90%;
 }
 
 audio {
-    display:none;
+    display: none;
 }
 
 #audiowrap, #plwrap {
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 #tracks {
-    font-size:0;
-    position:relative;
-    text-align:center;
+    font-size: 0;
+    position: relative;
+    text-align: center;
 }
 
 #plList {
@@ -270,30 +261,31 @@ audio {
 }
 
 .plItem {
-    position:relative;
+    position: relative;
 }
 
 .plTitle {
-    left:50px;
-    overflow:hidden;
-    position:absolute;
-    right:65px;
-    text-overflow:ellipsis;
-    top:0;
-    white-space:nowrap;
+    left: 50px;
+    overflow: hidden;
+    position: absolute;
+    right: 65px;
+    text-overflow: ellipsis;
+    top: 0;
+    white-space: nowrap;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .plNum {
-    padding-left:21px;
-    width:25px;
+    padding-left: 21px;
+    width: 25px;
 }
 
 .plLength {
-    padding-left:21px;
-    position:absolute;
-    right:21px;
-    top:0;
+    color: #FFB300;
+    padding-left: 21px;
+    position: absolute;
+    right: 21px;
+    top: 0;
     font-weight: bold;
 }
 
@@ -307,78 +299,46 @@ audio {
 }
 
 #tracks a {
-    border-radius:3px;
-    color:#fff;
-    cursor:pointer;
-    display:inline-block;
-    font-size:2rem;
-    height:35px;
-    line-height:.175;
-    margin:0 5px 30px;
-    padding:10px;
-    text-decoration:none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 2rem;
+    height: 35px;
+    line-height: .175;
+    margin: 0 5px 30px;
+    padding: 10px;
+    text-decoration: none;
     transition: background .3s ease;
 }
 
 #tracks a:last-child {
-    margin-left:0;
+    margin-left: 0;
 }
 
 #tracks a:hover, #tracks a:active {
-    background-color:rgba(0,0,0,.1);
-    color:#fff;
+    background-color: rgba(0, 0, 0, .1);
+    color: #fff;
 }
 
 #tracks a::-moz-focus-inner {
-    border:0;
-    padding:0;
-}
-
-.plyr--audio .plyr__controls {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: transparent;
-    border: none;
+    border: 0;
     padding: 0;
-    margin-right: 1rem;
 }
 
-.plyr--audio .plyr__controls button.tab-focus:focus,
-.plyr--audio .plyr__controls button:hover,
-.plyr__play-large {
-    background:rgba(0,0,0,.1);
+
+/* Plyr Overrides for Gold Theme */
+.plyr {
+    --plyr-color-main: #FFB300 !important;
+    --plyr-audio-control-color: #FFB300 !important;
+    --plyr-range-fill-background: #FFB300 !important;
+    --plyr-audio-progress-buffered-background: rgba(255, 179, 0, 0.3) !important;
+    --plyr-range-thumb-background: #FFB300 !important;
+    --plyr-range-thumb-shadow: none !important;
 }
 
-.plyr__progress--played,
-.plyr__volume--display {
-    color:rgba(0,0,0,.1);
-}
-
-.plyr--audio .plyr__progress--buffer,
-.plyr--audio .plyr__volume--display {
-    background:rgba(0,0,0,.1);
-}
-
-.plyr--audio .plyr__progress--buffer {
-    color:rgba(0,0,0,.1);
-}
-
-.plyr__progress__container,
-.plyr__time--duration,
-.plyr__time--current {
-    display: none !important;
-}
-
-/* Style the play button */
-.plyr__controls button[data-plyr="play"] {
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.plyr--full-ui input[type=range] {
+    color: #FFB300 !important;
 }
 
 /* Make the play triangle bigger and centered */
@@ -401,23 +361,16 @@ audio {
     margin-right: 100px !important;
 }
 
-/* Override Plyr's CSS variables */
-.plyr {
-    --plyr-color-main: #FFB300 !important;
-    --plyr-audio-control-color: #FFB300 !important;
-    --plyr-range-fill-background: #FFB300 !important;
-    --plyr-audio-progress-buffered-background: rgba(255, 179, 0, 0.3) !important;
-}
-
-/* Force color on the range input */
 .plyr--full-ui input[type=range]::-webkit-slider-runnable-track {
     background: #FFB300 !important;
     height: 4px !important;
+    border-radius: 2px !important;
 }
 
 .plyr--full-ui input[type=range]::-moz-range-track {
     background: #FFB300 !important;
     height: 4px !important;
+    border-radius: 2px !important;
 }
 
 .plyr--full-ui input[type=range]::-webkit-slider-thumb {
@@ -426,6 +379,7 @@ audio {
     height: 14px !important;
     width: 14px !important;
     margin-top: -5px !important;
+    border-radius: 50% !important;
 }
 
 .plyr--full-ui input[type=range]::-moz-range-thumb {
@@ -433,14 +387,19 @@ audio {
     border: 2px solid #fff !important;
     height: 14px !important;
     width: 14px !important;
+    border-radius: 50% !important;
 }
 
-/* Force color on the volume display */
-.plyr__volume--display {
+.plyr--full-ui input[type=range]:active::-webkit-slider-thumb {
     background: #FFB300 !important;
+    transform: scale(1.1) !important;
 }
 
-/* Style volume container */
+.plyr--full-ui input[type=range]:active::-moz-range-thumb {
+    background: #FFB300 !important;
+    transform: scale(1.1) !important;
+}
+
 .plyr__volume {
     width: 100% !important;
     min-width: 80px !important;
@@ -449,188 +408,59 @@ audio {
     position: relative;
 }
 
-/* Remove any unwanted backgrounds */
-.plyr--audio .plyr__controls {
-    background: transparent !important;
-}
-
-.plyr--audio .plyr__control {
-    color: #FFB300 !important;
-}
-
-/* Force color on active states */
-.plyr--full-ui input[type=range]:active::-webkit-slider-thumb {
+.plyr__volume--display {
     background: #FFB300 !important;
 }
 
-.plyr--full-ui input[type=range]:active::-moz-range-thumb {
-    background: #FFB300 !important;
-}
-
-/* Style mute button */
 .plyr__controls button[data-plyr="mute"] svg {
-    fill: #FFB300;
-    width: 20px;
-    height: 20px;
+    fill: #FFB300 !important;
 }
 
-/* Hover effects */
-.plyr__controls button[data-plyr="play"]:hover {
-    /* background: #ffffff; */
-    transform: scale(1.05);
-    /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); */
+.plyr__controls button[data-plyr="mute"]:hover svg {
+    fill: #FFD700 !important;
 }
 
-/* Style next button */
-.plyr__controls button[data-plyr="next"] {
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 0.5rem;
+.plyr__controls button[data-plyr="mute"]:active svg {
+    fill: #FFA500 !important;
 }
 
-.plyr__controls button[data-plyr="next"] svg {
-    fill: #dfb604;
-    width: 24px !important;
-    height: 24px !important;
-}
-
-.plyr__controls button[data-plyr="next"]:hover {
-    transform: scale(1.05);
-}
-
-/* Mobile adjustments */
+/* Mobile Adjustments */
 @media only screen and (max-width: 600px) {
-    #nowPlay span#npAction {
-        display:none;
-    }
-    #nowPlay span#npTitle {
-        display:block;
-        text-align:center;
-        width:100%;
-    }
-    .header-content h1 {
-        font-size: 2rem;
-    }
-    
-    .header-content .subtitle {
-        font-size: 0.9rem;
-    }
-    
-    .container {
-        padding: 0 0.75rem;
-    }
-    
-    .station-info {
-        padding: 1rem;
-    }
-    
-    .plyr__controls {
-        display: flex;
-        grid-column: 1 / -1;
-        justify-content: space-between;
-        margin-top: 0.5rem;
-        box-sizing: border-box;
-       
-    }
-    
-    #station-logo {
-        width: 80px;
-        height: 80px;
-        min-width: 80px;
-    }
-    
-    #npTitle {
-        font-size: 1.2rem;
-    }
-    
-    #npAction {
-        display: block !important; /* Force display on mobile */
-        font-size: 0.85rem;
-    }
-    
-    .plyr__controls button[data-plyr="play"] {
-        width: 30px;
-        height: 30px;  
-        
-    }
-    
-    .plyr__controls button[data-plyr="play"] svg {
-        width: 25px !important;
-        height: 25px !important;
-    }
-
-    .plyr__controls button[data-plyr="next"] {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .plyr__controls button[data-plyr="next"] svg {
-        width: 20px !important;
-        height: 20px !important;
-    }
-
     .plyr__volume {
-        min-width: 60px;
-        max-width: 80px;
-        
+        min-width: 60px !important;
+        max-width: 80px !important;
     }
-    
-    .play-info {
-        margin: 10px;
-        gap: 2px;
+
+    .plyr__volume input[type=range] {
+        width: 80% !important;
     }
 }
 
-/* Add styles for very small screens */
-@media only screen and (max-width: 380px) {
-    #station-logo {
-        width: 60px;
-        height: 60px;
-        min-width: 60px;
-    }
-    
-    #station-logo img {
-        padding: 4px;
-    }
-    
-    #npTitle {
-        font-size: 1.1rem;
-    }
-}
-
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
+/* Scrollbar Styles */
+* {
     scrollbar-width: auto;
     scrollbar-color: #4d0b20 #805900;
-  }
+}
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 33px;
-  }
+}
 
-  *::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: #4d0b20;
-  }
+}
 
-  *::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background-color: #805900;
     border-radius: 47px;
     border: 3px inset #4d0b20;
-  }
+}
 
-/* Hide the default audio player */
+/* Hide Default Audio Player */
 #audio0 {
     display: none;
 }
 
-/* Adjust playlist width to match */
 #plwrap {
     width: 100%;
 }
