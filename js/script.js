@@ -135,14 +135,14 @@ jQuery(function ($) {
                 "name": "Parani Gee Radio",
                 "duration": "LIVE",
                 "file": "https://stream.zeno.fm/18wvhnvmd18uv",
-                "logo": "images/stations/parani_gee.png"
+                "logo": "images/stations/parani_gee_radio.png"
             },
             {
                 "track": 18,
                 "name": "EDM FM Sri Lanka",
                 "duration": "LIVE",
                 "file": "https://stream.zeno.fm/ucqkp3kcmzzuv",
-                "logo": "images/stations/edm_fm.png"
+                "logo": "images/stations/edm_fm_sri_lanka.png"
             },
             {
                 "track": 19,
@@ -156,7 +156,7 @@ jQuery(function ($) {
                 "name": "Rangiri Sri Lanka Radio",
                 "duration": "LIVE",
                 "file": "https://stream.zeno.fm/wgp8fr3f4p8uv",
-                "logo": "images/stations/rangiri_radio.png"
+                "logo": "images/stations/rangiri_sri_lanka_radio.png"
             },
             {
                 "track": 21,
@@ -272,7 +272,16 @@ jQuery(function ($) {
             li = $('#plList li').on('click', function () {
                 var id = parseInt($(this).index());
                 if (id !== index) {
-                    playTrack(id);
+                    // Smooth scroll to top before playing
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Play the track after a small delay to allow smooth scrolling
+                    setTimeout(() => {
+                        playTrack(id);
+                    }, 300);
                 }
             }),
             loadTrack = function (id) {
@@ -375,6 +384,12 @@ jQuery(function ($) {
 
         // Next button
         nextBtn.addEventListener('click', () => {
+            // Smooth scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            
             if ((index + 1) < trackCount) {
                 index++;
                 loadTrack(index);
@@ -390,6 +405,12 @@ jQuery(function ($) {
 
         // Previous button
         prevBtn.addEventListener('click', () => {
+            // Smooth scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            
             if ((index - 1) > -1) {
                 index--;
                 loadTrack(index);
@@ -397,7 +418,6 @@ jQuery(function ($) {
                     audio.play();
                 }
             } else {
-                // Wrap to last track
                 index = trackCount - 1;
                 loadTrack(index);
                 if (playing) {
