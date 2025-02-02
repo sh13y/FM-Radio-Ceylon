@@ -9,12 +9,7 @@ jQuery(function ($) {
     if (supportsAudio) {
         // initialize plyr
         var player = new Plyr('#audio1', {
-            controls: [
-                'play',
-                'mute',
-                'volume',
-                'next'
-            ]
+            controls: [] // Remove default controls
         });
 
         // Get last played channel from localStorage
@@ -315,47 +310,107 @@ jQuery(function ($) {
                 audio.play();
             };
 
-        // Load last saved volume
+        // Setup custom controls
+        const playBtn = document.querySelector('.play-btn');
+        const muteBtn = document.querySelector('.mute-btn');
+        const volumeSlider = document.querySelector('.volume-slider');
+        const nextBtn = document.querySelector('.next-btn');
+
+        // Play/Pause
+        playBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playBtn.innerHTML = `
+                    <svg viewBox="0 0 24 24">
+                        <path d="M6,19h4V5H6V19z M14,5v14h4V5H14z"/>
+                    </svg>`;
+            } else {
+                audio.pause();
+                playBtn.innerHTML = `
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8,5.14V19.14L19,12.14L8,5.14Z"/>
+                    </svg>`;
+            }
+        });
+
+        // Mute
+        muteBtn.addEventListener('click', () => {
+            if (audio.muted) {
+                audio.muted = false;
+                muteBtn.innerHTML = `
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z"/>
+                    </svg>`;
+            } else {
+                audio.muted = true;
+                muteBtn.innerHTML = `
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3,9H7L12,4V20L7,15H3V9M16.59,12L14,9.41L15.41,8L18,10.59L20.59,8L22,9.41L19.41,12L22,14.59L20.59,16L18,13.41L15.41,16L14,14.59L16.59,12Z"/>
+                    </svg>`;
+            }
+        });
+
+        // Volume
+        volumeSlider.addEventListener('input', (e) => {
+            const value = e.target.value;
+            audio.volume = value / 100;
+            localStorage.setItem('playerVolume', audio.volume);
+            
+            // Update mute button state
+            if (value == 0) {
+                audio.muted = true;
+                muteBtn.innerHTML = `
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3,9H7L12,4V20L7,15H3V9M16.59,12L14,9.41L15.41,8L18,10.59L20.59,8L22,9.41L19.41,12L22,14.59L20.59,16L18,13.41L15.41,16L14,14.59L16.59,12Z"/>
+                    </svg>`;
+            } else if (audio.muted) {
+                audio.muted = false;
+                muteBtn.innerHTML = `
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z"/>
+                    </svg>`;
+            }
+        });
+
+        // Next button
+        nextBtn.addEventListener('click', () => {
+            if ((index + 1) < trackCount) {
+                index++;
+                loadTrack(index);
+                if (playing) {
+                    audio.play();
+                }
+            } else {
+                audio.pause();
+                index = 0;
+                loadTrack(index);
+            }
+        });
+
+        // Load saved volume
         const savedVolume = localStorage.getItem('playerVolume');
         if (savedVolume !== null) {
             audio.volume = parseFloat(savedVolume);
+            volumeSlider.value = audio.volume * 100;
         }
+
+        // Update play button on audio state change
+        audio.addEventListener('play', () => {
+            playBtn.innerHTML = `
+                <svg viewBox="0 0 24 24">
+                    <path d="M6,19h4V5H6V19z M14,5v14h4V5H14z"/>
+                </svg>`;
+        });
+
+        audio.addEventListener('pause', () => {
+            playBtn.innerHTML = `
+                <svg viewBox="0 0 24 24">
+                    <path d="M8,5.14V19.14L19,12.14L8,5.14Z"/>
+                </svg>`;
+        });
 
         // Initialize with last played track
         loadTrack(index);
-
-        // Add volume persistence
-        player.on('volumechange', event => {
-            localStorage.setItem('playerVolume', player.volume);
-        });
-
-        // Add this after player initialization
-        player.on('ready', () => {
-            // Move player controls into station-info
-            const controls = document.querySelector('.plyr__controls');
-            const stationInfo = document.querySelector('.station-info');
-            if (controls && stationInfo) {
-                stationInfo.appendChild(controls);
-            }
-
-            // Add next button click handler
-            const nextButton = document.querySelector('button[data-plyr="next"]');
-            if (nextButton) {
-                nextButton.addEventListener('click', () => {
-                    if ((index + 1) < trackCount) {
-                        index++;
-                        loadTrack(index);
-                        if (playing) {
-                            audio.play();
-                        }
-                    } else {
-                        audio.pause();
-                        index = 0;
-                        loadTrack(index);
-                    }
-                });
-            }
-        });
     } else {
         $('.column').addClass('hidden');
         var noSupport = $('#audio1').text();

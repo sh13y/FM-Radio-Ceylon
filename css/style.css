@@ -108,8 +108,9 @@ header {
 .station-info {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    align-items: center;
+    gap: 1rem;
     padding: 1.5rem;
+    align-items: center;
     position: relative;
     overflow: hidden;
     background: rgba(0, 0, 0, 0.3);
@@ -246,7 +247,7 @@ audio {
     cursor: pointer;
     display: block;
     margin: 0;
-    padding: 1rem;
+    padding: 0.8rem;
     transition: all 0.3s ease;
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
@@ -326,104 +327,6 @@ audio {
     padding: 0;
 }
 
-
-/* Plyr Overrides for Gold Theme */
-.plyr {
-    --plyr-color-main: #FFB300 !important;
-    --plyr-audio-control-color: #FFB300 !important;
-    --plyr-range-fill-background: #FFB300 !important;
-    --plyr-audio-progress-buffered-background: rgba(255, 179, 0, 0.3) !important;
-    --plyr-range-thumb-background: #FFB300 !important;
-    --plyr-range-thumb-shadow: none !important;
-}
-
-.plyr--full-ui input[type=range] {
-    color: #FFB300 !important;
-}
-
-/* Make the play triangle bigger and centered */
-.plyr__controls button[data-plyr="play"] svg {
-    fill: #FFB300;
-    width: 30px !important;  /* Force larger size */
-    height: 30px !important;
-    position: relative;
-    left: 2px; /* Slight adjustment for visual center */
-}
-
-/* Override Plyr's volume slider styles */
-.plyr--full-ui input[type=range] {
-    -webkit-appearance: none !important;
-    background: transparent !important;
-    border: none !important;
-    color: #FFB300 !important;
-    padding: 0 !important;
-    width: 50% !important;
-    margin-right: 100px !important;
-}
-
-.plyr--full-ui input[type=range]::-webkit-slider-runnable-track {
-    background: #FFB300 !important;
-    height: 4px !important;
-    border-radius: 2px !important;
-}
-
-.plyr--full-ui input[type=range]::-moz-range-track {
-    background: #FFB300 !important;
-    height: 4px !important;
-    border-radius: 2px !important;
-}
-
-.plyr--full-ui input[type=range]::-webkit-slider-thumb {
-    background: #FFB300 !important;
-    border: 2px solid #fff !important;
-    height: 14px !important;
-    width: 14px !important;
-    margin-top: -5px !important;
-    border-radius: 50% !important;
-}
-
-.plyr--full-ui input[type=range]::-moz-range-thumb {
-    background: #FFB300 !important;
-    border: 2px solid #fff !important;
-    height: 14px !important;
-    width: 14px !important;
-    border-radius: 50% !important;
-}
-
-.plyr--full-ui input[type=range]:active::-webkit-slider-thumb {
-    background: #FFB300 !important;
-    transform: scale(1.1) !important;
-}
-
-.plyr--full-ui input[type=range]:active::-moz-range-thumb {
-    background: #FFB300 !important;
-    transform: scale(1.1) !important;
-}
-
-.plyr__volume {
-    width: 100% !important;
-    min-width: 80px !important;
-    max-width: 100px !important;
-    margin-right: 50px !important;
-    position: relative;
-}
-
-.plyr__volume--display {
-    background: #FFB300 !important;
-}
-
-.plyr__controls button[data-plyr="mute"] svg {
-    fill: #FFB300 !important;
-}
-
-.plyr__controls button[data-plyr="mute"]:hover svg {
-    fill: #FFD700 !important;
-}
-
-.plyr__controls button[data-plyr="mute"]:active svg {
-    fill: #FFA500 !important;
-}
-
 /* Mobile Adjustments */
 @media only screen and (max-width: 600px) {
     .plyr__volume {
@@ -437,20 +340,20 @@ audio {
 }
 
 /* Scrollbar Styles */
-* {
+  * {
     scrollbar-width: auto;
     scrollbar-color: #4d0b20 #805900;
-}
+  }
 
-*::-webkit-scrollbar {
+  *::-webkit-scrollbar {
     width: 33px;
-}
+  }
 
-*::-webkit-scrollbar-track {
+  *::-webkit-scrollbar-track {
     background: #4d0b20;
-}
+  }
 
-*::-webkit-scrollbar-thumb {
+  *::-webkit-scrollbar-thumb {
     background-color: #805900;
     border-radius: 47px;
     border: 3px inset #4d0b20;
@@ -463,4 +366,260 @@ audio {
 
 #plwrap {
     width: 100%;
+}
+
+/* Header responsive adjustments */
+@media only screen and (max-width: 600px) {
+    header {
+        padding: 1.5rem 1rem;
+    }
+
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .header-content .subtitle {
+        font-size: 0.9rem;
+    }
+}
+
+/* Player responsive layout */
+.station-info {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    padding: 1.5rem;
+    align-items: center;
+}
+
+/* Responsive logo */
+#station-logo {
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+}
+
+@media only screen and (max-width: 480px) {
+    #station-logo {
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+    }
+}
+
+/* Responsive player controls */
+.plyr__controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 600px) {
+    .station-info {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        padding: 1rem;
+    }
+
+    .plyr__controls {
+        grid-column: 1 / -1;
+        justify-content: space-between;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .play-info {
+        margin: 0;
+        max-width: none;
+    }
+
+    #npTitle {
+        font-size: 1.1rem;
+    }
+
+    #npAction {
+        font-size: 0.85rem;
+    }
+
+    .plyr__volume {
+        min-width: 60px !important;
+        max-width: 80px !important;
+    }
+}
+
+/* Playlist responsive styles */
+#plList li {
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 480px) {
+    #plList li {
+        padding: 0.6rem;
+    }
+
+    .plTitle {
+        left: 40px;
+        right: 55px;
+        font-size: 0.9rem;
+    }
+
+    .plLength {
+        right: 15px;
+        font-size: 0.9rem;
+    }
+
+    .plNum {
+        padding-left: 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Large screen optimizations */
+@media only screen and (min-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+
+    .station-info {
+        padding: 2rem;
+    }
+
+    #station-logo {
+        width: 120px;
+        height: 120px;
+        min-width: 120px;
+    }
+
+    #npTitle {
+        font-size: 1.6rem;
+    }
+
+    #npAction {
+        font-size: 1rem;
+    }
+
+    .plyr__volume {
+        min-width: 120px !important;
+        max-width: 150px !important;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    #plList li:hover {
+        transform: none;
+    }
+
+    .plyr__controls button {
+        padding: 10px;
+    }
+
+    #station-logo img:hover {
+        transform: none;
+    }
+}
+
+/* Landscape mode adjustments */
+@media only screen and (max-height: 480px) and (orientation: landscape) {
+    .station-info {
+        grid-template-columns: auto 1fr auto;
+        padding: 1rem;
+    }
+
+    #station-logo {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+    }
+
+    .header-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .header-content .subtitle {
+        margin-top: 0.5rem;
+    }
+  }
+
+/* Player Controls */
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+}
+
+.control-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: #FFB300;
+}
+
+.control-btn:hover svg {
+    fill: #FFD700;
+    transform: scale(1.1);
+}
+
+/* Volume Control */
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.volume-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 179, 0, 0.3);
+    outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #FFB300;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+/* Mobile Adjustments */
+@media only screen and (max-width: 600px) {
+    .player-controls {
+        padding: 0.25rem;
+        gap: 0.5rem;
+    }
+
+    .control-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .volume-control {
+        max-width: 100px;
+    }
 }

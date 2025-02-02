@@ -22,15 +22,35 @@
     <div class="column add-bottom">
       <div id="mainwrap">
         <div id="nowPlay">
-          <div class="station-info";>
+          <div class="station-info">
             <div id="station-logo">
               <!-- Logo will be inserted here by JS -->
             </div>
-            <div class="play-info" style="width:auto;">
+            <div class="play-info">
               <span id="npAction">Paused...</span>
               <span id="npTitle"></span>
             </div>
-            <div id="audio0">
+            <div class="player-controls">
+              <button class="control-btn play-btn">
+                <svg viewBox="0 0 24 24">
+                  <path d="M8,5.14V19.14L19,12.14L8,5.14Z"/>
+                </svg>
+              </button>
+              <div class="volume-control">
+                <button class="control-btn mute-btn">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z"/>
+                  </svg>
+                </button>
+                <input type="range" class="volume-slider" min="0" max="100" value="100">
+              </div>
+              <button class="control-btn next-btn">
+                <svg viewBox="0 0 24 24">
+                  <path d="M16,18H18V6H16M6,18L14.5,12L6,6V18Z"/>
+                </svg>
+              </button>
+            </div>
+            <div id="audio0" style="display: none;">
               <audio id="audio1" preload controls>Your browser does not support HTML5 Audio! 😢</audio>
             </div>
           </div>
