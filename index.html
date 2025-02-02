@@ -12,19 +12,30 @@
 </head>
 
 <body>
-  <!-- <header>
-    <h1>LIVE FM Radio (Ceylon Only)</h1>
-  </header> -->
+  <header>
+    <div class="header-content">
+      <h1>Sri Lankan Live Radio</h1>
+      <p class="subtitle">Listen to your favorite stations anywhere</p>
+    </div>
+  </header>
   <div class="container">
     <div class="column add-bottom">
       <div id="mainwrap">
         <div id="nowPlay">
-          <span id="npAction">Paused...</span><span id="npTitle"></span>
-        </div>
-        <div id="audiowrap">
-          <div id="audio0">
-            <audio id="audio1" preload controls>Your browser does not support HTML5 Audio! 😢</audio>
+          <div class="station-info";>
+            <div id="station-logo">
+              <!-- Logo will be inserted here by JS -->
+            </div>
+            <div class="play-info" style="width:auto;">
+              <span id="npAction">Paused...</span>
+              <span id="npTitle"></span>
+            </div>
+            <div id="audio0">
+              <audio id="audio1" preload controls>Your browser does not support HTML5 Audio! 😢</audio>
+            </div>
           </div>
+        </div>
+        <div id="audiowrap" style="display: none;">
           <div id="tracks">
             <a id="btnPrev">&larr;</a><a id="btnNext">&rarr;</a>
           </div>

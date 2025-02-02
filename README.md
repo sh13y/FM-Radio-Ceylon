@@ -1,30 +1,65 @@
-# Welcome to Sri Lanka FM Radio Live
+# Sri Lankan Live Radio Player
 
-This is a simple web application that allows you to listen to live radio channels from Sri Lanka (Ceylon). With a straightforward user interface and easy navigation, you can enjoy your favorite FM stations hassle-free.
+A modern web-based radio player for Sri Lankan radio stations with a clean, responsive interface.
 
 ## Features
 
-1. **Live Streaming:** Tune in to any Sri Lankan FM radio channel live.
-2. **Simplified UI:** Easy-to-use interface for seamless navigation.
-3. **Sri Lankan Channels Only:** Exclusively plays FM radio channels from Sri Lanka (Ceylon).
-4. **HTML, CSS, JavaScript:** Developed using standard web technologies for compatibility and simplicity.
+- 🎵 27+ Sri Lankan radio stations
+- 🎨 Modern, responsive design
+- 💾 Remembers last played station
+- 🔊 Volume memory across sessions
+- 📱 Mobile-friendly interface
+- 🖼️ Station logos for visual identification
+- ⏭️ Easy navigation with play/next controls
+- 🌈 Sri Lankan flag-inspired color scheme
+- 🔍 Clean station list with hover effects
+- 🎯 Error handling for stream issues
 
-## How to Use
+## Controls
 
-1. **Launch the Website:** Simply open the website in your web browser.
-2. **Select a Channel:** Browse through the list of available Sri Lankan FM radio channels.
-3. **Click to Play:** Click on the channel you want to listen to, and the live stream will start immediately.
+- Play/Pause button
+- Mute toggle
+- Volume slider
+- Next track button
+- Station list for quick access
 
-## Compatibility
+## Technical Details
 
-This website is compatible with most modern web browsers and devices. Ensure you have a stable internet connection for uninterrupted streaming.
+### Dependencies
+- jQuery 3.3.1
+- HTML5 Media 1.1.8
+- Plyr 3.3.21
 
-## Disclaimer
+### Browser Support
+- Chrome (recommended)
+- Firefox
+- Safari
+- Edge
+- Opera
 
-This website is designed for personal entertainment purposes only. The availability and quality of radio streams may vary based on factors such as network conditions and station broadcasting.
+## Installation
 
-Enjoy listening to Sri Lankan FM radio channels live with ease!
+1. Clone the repository
+2. Ensure all dependencies are loaded
+3. Open index.html in a modern browser
+
+## Development
+
+The project uses:
+- HTML5 for structure
+- CSS3 for styling
+- JavaScript for functionality
+- Plyr for media controls
+- Local storage for user preferences
+
+## Contributing
+
+Feel free to submit issues and enhancement requests!
 
 ## License
 
-This project is licensed under the WTFPL license. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Credits
+
+Made with ❤️ in Ceylon by [shiey](http://isuru.eu.org/)
