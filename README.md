@@ -62,7 +62,7 @@ Feel free to submit issues and enhancement requests! We're friendly like Sri Lan
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the WTFPL License - see the LICENSE file for details.
 (Free like the breeze at Galle Face Green 🌊)
 
 ## Credits
